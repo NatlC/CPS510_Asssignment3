@@ -30,6 +30,7 @@ CREATE TABLE Patient (
     Email VARCHAR(100),
     DateOfBirth DATE,
     Address VARCHAR(255),
+    MedicalHistory VARCHAR(255) NOT NULL,
     FOREIGN KEY (Address) REFERENCES AddressInfo(Address)
 );
 
@@ -77,8 +78,8 @@ VALUES ('123 Jane St', 'Jane St', 'Toronto', 'ON', 'G5U8K9');
 
 SELECT * FROM AddressInfo;
 
-INSERT INTO Patient (PatientID, FirstName, LastName, Phone, Email, DateOfBirth, Address)
-VALUES (1, 'Jane', 'Smith', '111-111-1111', 'jane.smith@example.com', TO_DATE('2024-09-25', 'YYYY-MM-DD'), '123 Jane St');
+INSERT INTO Patient (PatientID, FirstName, LastName, Phone, Email, DateOfBirth, Address, MedicalHistory)
+VALUES (1, 'Jane', 'Smith', '111-111-1111', 'jane.smith@example.com', TO_DATE('2024-09-25', 'YYYY-MM-DD'), '123 Jane St', 'None');
 
 SELECT * FROM Patient;
 
